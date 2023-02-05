@@ -27,3 +27,34 @@ body {
   max-width: 100%;
   width: 350px;
 }
+
+.progress-wizard-container::before,
+.progress-line {
+  content: '';
+  background-color: lightgrey;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  height: 3px;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+.progress-line {
+  background-color: blueviolet;
+  width: 30%;
+}
+
+.circle {
+  display: flex;
+  background-color: white;
+  color: grey;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid lightgray;
+}
