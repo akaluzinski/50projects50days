@@ -28,6 +28,11 @@
   transform: scale(0.9);
 }
 
+.btn:disabled {
+  background-color: var(--inactive-border-color);
+  cursor: not-allowed;
+}
+
 body {
   font-family: 'Muli', sans-serif;
   background-color: #f6f7fb;
