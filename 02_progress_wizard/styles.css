@@ -73,7 +73,7 @@ body {
 
 .progress-line {
   background-color: var(--active-border-color);
-  width: 30%;
+  width: 0%;
 }
 
 .circle {
