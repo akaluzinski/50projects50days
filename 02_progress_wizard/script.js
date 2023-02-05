@@ -46,5 +46,7 @@ function update() {
   const actives = document.querySelectorAll(`.${activeClassName}`);
   progressLine.style.width =
     ((actives.length - 1) / (circles.length - 1)) * 100 + '%';
-  console.log(progressLine.style.width);
+
+  back.disabled = currentActiveIndex === 0;
+  next.disabled = currentActiveIndex === circles.length - 1;
 }

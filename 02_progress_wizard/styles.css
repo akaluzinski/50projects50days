@@ -24,7 +24,7 @@
   margin: 5px;
 }
 
-.btn:active {
+.btn:active:not(:disabled) {
   transform: scale(0.9);
 }
 
