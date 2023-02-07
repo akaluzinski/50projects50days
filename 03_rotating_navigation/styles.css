@@ -36,9 +36,37 @@ body {
   left: calc(var(--navigator-size) * -0.5);
 }
 
-.circle-container {
+.circle {
+  position: relative;
   background-color: #ff7979;
   height: var(--navigator-size);
   width: var(--navigator-size);
   border-radius: 50%;
+
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  border: 0;
+  font-size: 26px;
+  color: white;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open-navigation {
+  left: 60%;
+}
+
+.circle button#close-navigation {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
 }
