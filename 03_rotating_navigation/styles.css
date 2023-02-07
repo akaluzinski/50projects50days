@@ -95,6 +95,11 @@ body {
   transform-origin: top left;
 }
 
+.container.show-navigation + .menu li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
 .menu {
   position: fixed;
   bottom: 40px;
@@ -107,9 +112,26 @@ body {
   padding-left: 32px;
 }
 
-.menu .menu-list .menu-list-item {
+.menu .menu-list li {
   text-transform: uppercase;
   color: white;
-  margin-top: 40px;
+  margin-top: 32px;
   margin-bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in;
+}
+
+.menu .menu-list li i {
+  font-size: 20px;
+  margin-right: 14px;
+}
+
+.menu .menu-list li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+.menu .menu-list li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
 }
