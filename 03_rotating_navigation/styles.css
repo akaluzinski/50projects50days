@@ -42,7 +42,7 @@ body {
 .container {
   background-color: #fafafa;
   transform-origin: top left;
-  transition: transform 0.5s linear;
+  transition: transform 0.4s linear;
   width: 100vw;
 
   min-height: 100vh;
@@ -101,7 +101,7 @@ body {
 
 .container.show-navigation + .menu li {
   transform: translateX(0);
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
 }
 
 .menu {
