@@ -69,6 +69,10 @@ body {
   transition: transform 0.5s linear;
 }
 
+.container.show-navigation .circle {
+  transform: rotate(-70deg);
+}
+
 .circle button {
   position: absolute;
   background: transparent;
