@@ -37,7 +37,11 @@ body {
 }
 
 .expandable-search.active .input {
-  width: calc(var(--expandable-search-width * 4));
+  width: calc(var(--expandable-search-width) * 4);
+}
+
+.expandable-search.active .btn {
+  transform: translateX(calc(var(--expandable-search-width) * 4 - 2px));
 }
 
 .btn {
