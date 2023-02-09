@@ -2,6 +2,7 @@
 
 :root {
   --image-url: url('https://images.unsplash.com/photo-1675365723622-4f502982f089?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1828&q=80');
+  --blur-spacing--offset: -30px;
 }
 
 * {
@@ -22,10 +23,10 @@ body {
 .background-image {
   background: var(--image-url) no-repeat center center/cover;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
+  top: var(--blur-spacing--offset);
+  left: var(--blur-spacing--offset);
+  height: calc(100vh - 2 * var(--blur-spacing--offset));
+  width: calc(100vw - 2 * var(--blur-spacing--offset));
   z-index: -100;
   filter: blur(0px);
 }
