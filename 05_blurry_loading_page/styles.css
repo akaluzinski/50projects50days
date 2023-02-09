@@ -20,7 +20,7 @@ body {
 }
 
 .background-image {
-  background-image: var(--image-url);
+  background: var(--image-url) no-repeat center center/cover;
   position: absolute;
   top: 0;
   left: 0;
