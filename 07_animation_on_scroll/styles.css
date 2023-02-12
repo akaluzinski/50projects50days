@@ -38,10 +38,14 @@ h1 {
   transition: transform 0.4s ease;
 }
 
+.content-box:nth-of-type(even) {
+  transform: translateX(calc(-1 * var(--translateX)));
+}
+
 .content-box.show {
   transform: translateX(0%);
 }
 
-.content-box:nth-of-type(even) {
-  transform: translateX(calc(var(--translateX) * -1));
+.content-box h2 {
+  font-size: 14px;
 }
