@@ -6,7 +6,12 @@
 
 :root {
   --left-background-color: rgba(43, 43, 43, 0.8);
+  --left-button-hover-color: rgba(100, 43, 43, 1);
+
   --right-background-color: rgba(87, 84, 236, 0.7);
+  --right-button-hover-color: rgba(87, 84, 236, 1);
+
+  --text-color: white;
 }
 
 body {
@@ -45,11 +50,21 @@ body {
   height: 100%;
 }
 
+.split.left .btn:hover {
+  background-color: var(--left-button-hover-color);
+  border-color: var(--left-button-hover-color);
+}
+
 .split.right {
   right: 0;
   background: url('ps5.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.split.right .btn:hover {
+  background-color: var(--right-background-color);
+  border-color: var(--right-background-color);
 }
 
 .split.right::before {
@@ -63,9 +78,28 @@ body {
 h1 {
   font-size: 65px;
   white-space: nowrap;
-  color: white;
+  color: var(--text-color);
   position: absolute;
   left: 50%;
   top: 20%;
   transform: translateX(-50%);
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: var(--text-color);
+  border: var(--text-color) solid 3px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 140px;
+  padding: 20px;
 }
