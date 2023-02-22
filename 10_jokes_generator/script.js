@@ -8,16 +8,15 @@ const config = {
   },
 };
 
-function fetchJoke() {
-  fetch(apiURL, config)
-    .then((result) => result.json())
-    .then(({ joke }) => {
-      jokeContainer.innerHTML = joke;
-    });
+async function fetchJoke() {
+  const data = await fetch(apiURL, config);
+  const { joke } = await data.json();
+  return joke;
 }
 
-function onGetJokeClick() {
-  fetchJoke();
+async function onGetJokeClick() {
+  const joke = await fetchJoke();
+  jokeContainer.innerText = joke;
 }
 
 jokeButton.addEventListener('click', onGetJokeClick);
