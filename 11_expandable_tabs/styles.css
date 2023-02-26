@@ -36,6 +36,22 @@ h1 {
   box-shadow: 0 2px 2px;
 }
 
+.faq.active::before,
+.faq.active::after {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: #2ecc71;
+  font-size: 7rem;
+  opacity: 0.15;
+}
+
 .faq.active::before {
-  content: 'text';
+  color: blue;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
 }
