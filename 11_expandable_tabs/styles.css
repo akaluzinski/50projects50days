@@ -68,3 +68,19 @@ h1 {
 .faq-text.active {
   display: block;
 }
+
+.faq-toggle {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 0;
+}
