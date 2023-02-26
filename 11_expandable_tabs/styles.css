@@ -83,14 +83,21 @@ h1 {
   background-color: transparent;
   font-size: 16px;
   padding: 0;
+  outline: 0;
+  border-radius: 50%;
 }
 
 .faq-toggle .fa-times {
   display: none;
 }
 
+.faq.active .faq-toggle {
+  background: grey;
+}
+
 .faq.active .faq-toggle .fa-times {
   display: block;
+  color: white;
 }
 
 .faq.active .faq-toggle .fa-chevron-down {
