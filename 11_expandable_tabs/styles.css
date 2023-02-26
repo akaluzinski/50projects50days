@@ -84,3 +84,15 @@ h1 {
   font-size: 16px;
   padding: 0;
 }
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
