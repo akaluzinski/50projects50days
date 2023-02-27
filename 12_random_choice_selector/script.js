@@ -42,7 +42,7 @@ function pickRandomTag() {
 }
 
 function selectRandom() {
-  const times = 50;
+  const times = 100;
   const changesIntervalMs = 50;
 
   const interval = setInterval(() => {
@@ -52,6 +52,14 @@ function selectRandom() {
       markInactiveTag(randomTag);
     }, changesIntervalMs);
   }, changesIntervalMs);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    setTimeout(() => {
+      const randomTag = pickRandomTag();
+      markActiveTag(randomTag);
+    }, changesIntervalMs);
+  }, times * changesIntervalMs);
 }
 
 function pickUpRandom(event) {
