@@ -23,18 +23,16 @@ function createTags(value) {
 }
 
 function cleanTextArea(event) {
-  if (event.key === 'Enter') {
-    setTimeout(() => {
-      event.target.value = '';
-    }, 10);
-  }
+  setTimeout(() => {
+    event.target.value = '';
+  }, 10);
 }
 
 function markActiveTag(tag) {
   tag.classList.add(activeClassName);
 }
 
-function markUnactiveTag(tag) {
+function markInactiveTag(tag) {
   tag.classList.remove(activeClassName);
 }
 
@@ -45,16 +43,22 @@ function pickRandomTag() {
 
 function selectRandom() {
   const times = 50;
+  const changesIntervalMs = 50;
 
-  const interval = setTimeout(() => {
+  const interval = setInterval(() => {
     const randomTag = pickRandomTag();
-    console.log(randomTag);
-  }, 100);
+    markActiveTag(randomTag);
+    setTimeout(() => {
+      markInactiveTag(randomTag);
+    }, changesIntervalMs);
+  }, changesIntervalMs);
 }
 
 function pickUpRandom(event) {
-  cleanTextArea(event);
-  selectRandom();
+  if (event.key === 'Enter') {
+    cleanTextArea(event);
+    selectRandom();
+  }
 }
 
 function onKeyUp(event) {
