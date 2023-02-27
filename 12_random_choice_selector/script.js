@@ -4,19 +4,21 @@ const separator = ',';
 
 textarea.focus();
 
+function createTag(label) {
+  const newTag = document.createElement('span');
+  newTag.classList.add('tag');
+  newTag.innerText = label;
+  return newTag;
+}
+
 function createTags(value) {
   tags.innerHTML = '';
 
   const tagTexts = value
     .split(separator)
-    .map((tag) => tag.trim())
-    .filter((tag) => tag.length > 0)
-    .forEach((tag) => {
-      const newTag = document.createElement('span');
-      newTag.classList.add('tag');
-      newTag.innerText = tag;
-      tags.appendChild(newTag);
-    });
+    .map((label) => label.trim())
+    .filter((label) => label.length > 0)
+    .forEach((label) => tags.appendChild(createTag(label)));
 }
 
 function onKeyUp({ target }) {
