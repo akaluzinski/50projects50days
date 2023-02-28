@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  background-color: lightcyan;
+  background-image: linear-gradient(
+    to bottom,
+    lightcyan 0%,
+    lightcyan 50%,
+    #5290f9 50%,
+    #5290f9 100%
+  );
+  font-family: 'Muli', sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
