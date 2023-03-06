@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Roboto Mono', sans-serif;
+  flex-direction: row;
   background-color: #8e44ad;
   color: white;
   margin: 0;
@@ -27,4 +28,10 @@ body {
 .counter {
   margin-top: 10px;
   font-size: 60px;
+}
+
+@media (max-width: 500px) {
+  body {
+    flex-direction: column;
+  }
 }
