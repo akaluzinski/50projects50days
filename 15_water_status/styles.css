@@ -2,6 +2,7 @@
 
 :root {
   --border-color: #144fc6;
+  --full-cup-color: #6ab3f8;
 }
 
 * {
@@ -45,7 +46,7 @@ h3 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 5px;
+  margin: 6px;
   width: 50px;
   height: 95px;
   border-radius: 0 0 16px 16px;
@@ -53,4 +54,16 @@ h3 {
   cursor: pointer;
   font-size: 14px;
   transform: 0.34s ease;
+}
+
+.cup.cup-small.full {
+  background-color: var(--full-cup-color);
+}
+
+.small-cups {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 260px;
 }
