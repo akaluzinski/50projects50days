@@ -4,17 +4,19 @@ const percent = document.getElementById('percent');
 const remained = document.getElementById('remained');
 const fullCupClassName = 'full';
 
+function setPercentStyle(visibility, height) {
+  percent.style.visibility = visibility;
+  percent.style.height = height;
+}
+
 function updateMainCup() {
   const fullCupsCount = getFullCupsCount();
   const totalCupsCount = smallCups.length;
   if (!fullCupsCount) {
-    percent.style.visibility = 'hidden';
-    percent.style.height = 0;
+    setPercentStyle('hidden', 0);
   } else {
-    const height = `${(fullCupsCount / totalCupsCount) * 100}`;
-
-    percent.style.visibility = 'visible';
-    percent.style.height = height;
+    const height = `${(fullCupsCount / totalCupsCount) * 330}px`;
+    setPercentStyle('visible', height);
   }
 }
 
