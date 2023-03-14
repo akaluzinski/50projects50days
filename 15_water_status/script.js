@@ -4,9 +4,17 @@ const percent = document.getElementById('percent');
 const remained = document.getElementById('remained');
 const fullCupClassName = 'full';
 
-function setPercentStyle(visibility, height) {
+const glassVolumeMl = 250;
+const litersExpected = 2;
+
+function setRemainedStyle(visibility, heightPx) {
+  remained.style.visibility = visibility;
+  remained.style.height = `${heightPx}px`;
+}
+
+function setPercentStyle(visibility, heightPx) {
   percent.style.visibility = visibility;
-  percent.style.height = height;
+  percent.style.height = `${heightPx}px`;
 }
 
 function updateMainCup() {
@@ -15,8 +23,18 @@ function updateMainCup() {
   if (!fullCupsCount) {
     setPercentStyle('hidden', 0);
   } else {
-    const height = `${(fullCupsCount / totalCupsCount) * 330}px`;
-    setPercentStyle('visible', height);
+    const ratio = fullCupsCount / totalCupsCount;
+    setPercentStyle('visible', ratio * 330);
+    percent.innerText = `${ratio * 100}%`;
+  }
+
+  if (fullCupsCount === totalCupsCount) {
+    setRemainedStyle('hidden', 0);
+  } else {
+    setRemainedStyle('visible');
+    liters.innerHTML = `${
+      litersExpected - (glassVolumeMl * fullCupsCount) / 1000
+    }L`;
   }
 }
 
@@ -51,3 +69,5 @@ function highlightCups(lastCupToHighlightIdx) {
 function getFullCupsCount() {
   return document.querySelectorAll('.cup-small.full').length;
 }
+
+updateMainCup();
