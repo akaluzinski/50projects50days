@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+:root {
+  --black: hsl(0, 0%, 11%);
+  --time: 500ms;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  height: 44px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+#box {
+  width: 600px;
+  aspect-ratio: 2/1;
+
+  padding: 16px;
+  perspective: 1000px;
+}
+
+#main-plane {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform var(--time);
+  border: 1px solid var(--black);
+}
+
+#box[data-rotate='true'] #main-plane {
+  transform: translate3d(0, 0, -200px) rotate3d(0.1, -0.1, 0.1, 90deg);
+}
+
+.plane {
+  width: 20%;
+  aspect-ratio: 3/1;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  border: 1px solid var(--black);
+  transition: transform var(--time);
+}
+
+#box[data-rotate='true'] .plane {
+  transition-delay: var(--time);
+}
+
+#box[data-rotate='true'] .plane:nth-child(2) {
+  transform: translate3d(0, 0, 20px);
+}
+
+#box[data-rotate='true'] .plane:nth-child(3) {
+  transform: translate3d(0, 0, 40px);
+}
+
+#box[data-rotate='true'] .plane:nth-child(4) {
+  transform: translate3d(0, 0, 60px);
+}
+
+#box[data-rotate='true'] .plane:nth-child(5) {
+  transform: translate3d(0, 0, -20px);
+}
