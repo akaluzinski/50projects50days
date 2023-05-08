@@ -58,6 +58,8 @@ body::before {
 .arrow {
   position: fixed;
   outline: 0;
+  color: white;
+  cursor: pointer;
   font-size: 30px;
   background-color: transparent;
   padding: 20px;
