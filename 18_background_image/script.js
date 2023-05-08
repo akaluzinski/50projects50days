@@ -15,6 +15,16 @@ rightButton.addEventListener('click', () => {
   setActiveSlide();
 });
 
+leftButton.addEventListener('click', () => {
+  activeSlideIdx--;
+  if (activeSlideIdx < 0) {
+    activeSlideIdx = slides.length - 1;
+  }
+
+  setBackgroundToBody();
+  setActiveSlide();
+});
+
 function setBackgroundToBody() {
   body.style.backgroundImage = slides[activeSlideIdx].style.backgroundImage;
 }
