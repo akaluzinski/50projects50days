@@ -57,8 +57,6 @@ body {
   position: relative;
   width: 200px;
   height: 200px;
-
-  background-color: lavenderblush;
 }
 
 .needle {
@@ -84,4 +82,15 @@ body {
   transform: translate(-50%, -100%) rotate(0deg);
   height: 100px;
   background-color: red;
+}
+
+.center {
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
