@@ -94,3 +94,27 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+
+.time {
+  font-size: 50px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
+}
