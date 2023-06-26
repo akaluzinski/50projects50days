@@ -7,16 +7,19 @@ const toggle = document.querySelector('.toggle');
 
 const darkModeClassName = 'dark';
 
-function onDarkModeClick(event) {
+const onDarkModeClick = event => {
     const html = document.querySelector('html');
-    if(html.classList.contains(darkModeClassName)) {
+    if (html.classList.contains(darkModeClassName)) {
         html.classList.remove(darkModeClassName)
         event.target.innerHTML = 'Dark mode';
     } else {
         html.classList.add(darkModeClassName);
         event.target.innerHTML = 'Light mode';
     }
-}
+};
+
+const rotateDeg = (number, inMax) => number * 360 / inMax
+const transformStyle = newDegree => `translate(-50%, -100%) rotate(${newDegree}deg)`
 
 function setTime() {
     const now = new Date();
@@ -26,15 +29,10 @@ function setTime() {
     const minuteDegrees = rotateDeg(now.getMinutes(), 59);
     const secondsDegrees = rotateDeg(now.getSeconds(), 59);
 
-    const transformStyle = newDegree => `translate(-50%, -100%) rotate(${newDegree}deg)`
-
     hourNeedle.style.transform = transformStyle(hourDegrees);
     minuteNeedle.style.transform = transformStyle(minuteDegrees);
     secondNeedle.style.transform = transformStyle(secondsDegrees);
-
 }
 
-const rotateDeg = (number, inMax) => number * 360 / inMax
 toggle.addEventListener('click', onDarkModeClick);
-
-setTime();
+setInterval(setTime, 1000);
