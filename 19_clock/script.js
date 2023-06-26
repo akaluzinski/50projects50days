@@ -18,4 +18,20 @@ function onDarkModeClick(event) {
     }
 }
 
+function setTime() {
+    const now = new Date();
+    const month = now.getMonth();
+    const day = now.getDay();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const hourDegrees = scale(hours % 12, 0, 11, 0, 360)
+
+    hour.style.transform = `translate(-50%, -100%) rotate(${hourDegrees}deg)`;
+
+}
+
+const scale = (number, inMin, inMax, outMin, outMax) => (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
 toggle.addEventListener('click', onDarkModeClick);
+
+setTime();
