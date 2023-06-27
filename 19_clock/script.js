@@ -21,6 +21,14 @@ const onDarkModeClick = event => {
 const rotateDeg = (number, inMax) => number * 360 / inMax
 const transformStyle = newDegree => `translate(-50%, -100%) rotate(${newDegree}deg)`
 
+function getWeekday(date) {
+    return date.toLocaleDateString(navigator.language, { weekday: 'long' })
+}
+
+function getMonth(date) {
+    return date.toLocaleDateString(navigator.language, { month: 'short' });
+}
+
 function setTime() {
     const now = new Date();
     const month = now.getMonth();
@@ -36,7 +44,9 @@ function setTime() {
     secondNeedle.style.transform = transformStyle(secondsDegrees);
 
     time.innerHTML = `${hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
+    date.innerHTML = `${getWeekday(now)}, ${getMonth(now)}<span class='circle'>${day}</span>`
 }
 
+setTime();
 toggle.addEventListener('click', onDarkModeClick);
 setInterval(setTime, 1000);
