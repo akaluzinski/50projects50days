@@ -25,13 +25,17 @@ function setTime() {
     const now = new Date();
     const month = now.getMonth();
     const day = now.getDay();
-    const hourDegrees = rotateDeg(now.getHours() % 12, 11);
-    const minuteDegrees = rotateDeg(now.getMinutes(), 59);
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const hourDegrees = rotateDeg(hours % 12, 11);
+    const minuteDegrees = rotateDeg(minutes, 59);
     const secondsDegrees = rotateDeg(now.getSeconds(), 59);
 
     hourNeedle.style.transform = transformStyle(hourDegrees);
     minuteNeedle.style.transform = transformStyle(minuteDegrees);
     secondNeedle.style.transform = transformStyle(secondsDegrees);
+
+    time.innerHTML = `${hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
 }
 
 toggle.addEventListener('click', onDarkModeClick);
